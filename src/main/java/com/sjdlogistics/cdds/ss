@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CebExpInvtReturnMessage xmlns="http://www.chinaport.gov.cn/ceb" version="1.0"
+                         guid="21a6436c-bf8d-4954-9b0a-9a82ec2ecdc5">
+    <ExpInvtReturn>
+        <guid>44F02F99-A38F-45A8-93BA-EB86A8DF0512</guid>
+        <returnStatus>2</returnStatus>
+        <returnTime>20171112202010405</returnTime>
+        <returnInfo>申报中</returnInfo>
+    </ExpInvtReturn>
+</CebExpInvtReturnMessage>

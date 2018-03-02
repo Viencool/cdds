@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjdlogistics.cdds.dao.ExpInventoryHeadDao">
+  <resultMap id="BaseResultMap" type="com.sjdlogistics.cdds.entity.ExpInventoryHead">
+    <result column="ORDERNO" jdbcType="VARCHAR" property="orderno" />
+    <result column="EBPCODE" jdbcType="VARCHAR" property="ebpcode" />
+    <result column="EBPNAME" jdbcType="VARCHAR" property="ebpname" />
+    <result column="EBCCODE" jdbcType="VARCHAR" property="ebccode" />
+    <result column="EBCNAME" jdbcType="VARCHAR" property="ebcname" />
+    <result column="PRODUCTCODE" jdbcType="VARCHAR" property="productcode" />
+    <result column="PRODUCTNAME" jdbcType="VARCHAR" property="productname" />
+    <result column="LOGISTICSCODE" jdbcType="VARCHAR" property="logisticscode" />
+    <result column="LOGISTICSNAME" jdbcType="VARCHAR" property="logisticsname" />
+    <result column="LOGISTICSNO" jdbcType="VARCHAR" property="logisticsno" />
+    <result column="EMSNO" jdbcType="VARCHAR" property="emsno" />
+    <result column="PRENO" jdbcType="VARCHAR" property="preno" />
+    <result column="INVTNO" jdbcType="VARCHAR" property="invtno" />
+    <result column="IEFLAG" jdbcType="CHAR" property="ieflag" />
+    <result column="DECLTIME" jdbcType="CHAR" property="decltime" />
+    <result column="CUSTOMSCODE" jdbcType="CHAR" property="customscode" />
+    <result column="PORTCODE" jdbcType="CHAR" property="portcode" />
+    <result column="IEDATE" jdbcType="CHAR" property="iedate" />
+    <result column="AGENTCODE" jdbcType="VARCHAR" property="agentcode" />
+    <result column="AGENTNAME" jdbcType="VARCHAR" property="agentname" />
+    <result column="AREACODE" jdbcType="VARCHAR" property="areacode" />
+    <result column="AREANAME" jdbcType="VARCHAR" property="areaname" />
+    <result column="TRADEMODE" jdbcType="CHAR" property="trademode" />
+    <result column="TRAFMODE" jdbcType="CHAR" property="trafmode" />
+    <result column="TRAFNO" jdbcType="VARCHAR" property="trafno" />
+    <result column="VOYAGENO" jdbcType="VARCHAR" property="voyageno" />
+    <result column="BILLNO" jdbcType="VARCHAR" property="billno" />
+    <result column="LOCTNO" jdbcType="VARCHAR" property="loctno" />
+    <result column="PACKAGENUM" jdbcType="VARCHAR" property="packagenum" />
+    <result column="LICENSENO" jdbcType="VARCHAR" property="licenseno" />
+    <result column="ARRIVEDPORT" jdbcType="VARCHAR" property="arrivedport" />
+    <result column="COUNTRY" jdbcType="CHAR" property="country" />
+    <result column="FREIGHT" jdbcType="NUMERIC" property="freight" />
+    <result column="FEECURRENCY" jdbcType="CHAR" property="feecurrency" />
+    <result column="FEEFLAG" jdbcType="CHAR" property="feeflag" />
+    <result column="INSUREDFEE" jdbcType="NUMERIC" property="insuredfee" />
+    <result column="INRCURRENCY" jdbcType="CHAR" property="inrcurrency" />
+    <result column="INRFLAG" jdbcType="CHAR" property="inrflag" />
+    <result column="WRAPTYPE" jdbcType="CHAR" property="wraptype" />
+    <result column="PACKNO" jdbcType="NUMERIC" property="packno" />
+    <result column="GROSSWEIGHT" jdbcType="NUMERIC" property="grossweight" />
+    <result column="NETWEIGHT" jdbcType="NUMERIC" property="netweight" />
+    <result column="NOTE" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+  <insert id="insert" parameterType="com.sjdlogistics.cdds.entity.ExpInventoryHead">
+    insert into EXPINVENTORYHEAD (ORDERNO, EBPCODE, EBPNAME, 
+      EBCCODE, EBCNAME, PRODUCTCODE, 
+      PRODUCTNAME, LOGISTICSCODE, LOGISTICSNAME, 
+      LOGISTICSNO, EMSNO, PRENO, 
+      INVTNO, IEFLAG, DECLTIME, 
+      CUSTOMSCODE, PORTCODE, IEDATE, 
+      AGENTCODE, AGENTNAME, AREACODE, 
+      AREANAME, TRADEMODE, TRAFMODE, 
+      TRAFNO, VOYAGENO, BILLNO, 
+      LOCTNO, PACKAGENUM, LICENSENO, 
+      ARRIVEDPORT, COUNTRY, FREIGHT, 
+      FEECURRENCY, FEEFLAG, INSUREDFEE, 
+      INRCURRENCY, INRFLAG, WRAPTYPE, 
+      PACKNO, GROSSWEIGHT, NETWEIGHT, 
+      NOTE)
+    values (#{orderno,jdbcType=VARCHAR}, #{ebpcode,jdbcType=VARCHAR}, #{ebpname,jdbcType=VARCHAR}, 
+      #{ebccode,jdbcType=VARCHAR}, #{ebcname,jdbcType=VARCHAR}, #{productcode,jdbcType=VARCHAR}, 
+      #{productname,jdbcType=VARCHAR}, #{logisticscode,jdbcType=VARCHAR}, #{logisticsname,jdbcType=VARCHAR}, 
+      #{logisticsno,jdbcType=VARCHAR}, #{emsno,jdbcType=VARCHAR}, #{preno,jdbcType=VARCHAR}, 
+      #{invtno,jdbcType=VARCHAR}, #{ieflag,jdbcType=CHAR}, #{decltime,jdbcType=CHAR}, 
+      #{customscode,jdbcType=CHAR}, #{portcode,jdbcType=CHAR}, #{iedate,jdbcType=CHAR}, 
+      #{agentcode,jdbcType=VARCHAR}, #{agentname,jdbcType=VARCHAR}, #{areacode,jdbcType=VARCHAR}, 
+      #{areaname,jdbcType=VARCHAR}, #{trademode,jdbcType=CHAR}, #{trafmode,jdbcType=CHAR}, 
+      #{trafno,jdbcType=VARCHAR}, #{voyageno,jdbcType=VARCHAR}, #{billno,jdbcType=VARCHAR}, 
+      #{loctno,jdbcType=VARCHAR}, #{packagenum,jdbcType=VARCHAR}, #{licenseno,jdbcType=VARCHAR}, 
+      #{arrivedport,jdbcType=VARCHAR}, #{country,jdbcType=CHAR}, #{freight,jdbcType=NUMERIC}, 
+      #{feecurrency,jdbcType=CHAR}, #{feeflag,jdbcType=CHAR}, #{insuredfee,jdbcType=NUMERIC}, 
+      #{inrcurrency,jdbcType=CHAR}, #{inrflag,jdbcType=CHAR}, #{wraptype,jdbcType=CHAR}, 
+      #{packno,jdbcType=NUMERIC}, #{grossweight,jdbcType=NUMERIC}, #{netweight,jdbcType=NUMERIC}, 
+      #{note,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sjdlogistics.cdds.entity.ExpInventoryHead">
+    insert into EXPINVENTORYHEAD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderno != null">
+        ORDERNO,
+      </if>
+      <if test="ebpcode != null">
+        EBPCODE,
+      </if>
+      <if test="ebpname != null">
+        EBPNAME,
+      </if>
+      <if test="ebccode != null">
+        EBCCODE,
+      </if>
+      <if test="ebcname != null">
+        EBCNAME,
+      </if>
+      <if test="productcode != null">
+        PRODUCTCODE,
+      </if>
+      <if test="productname != null">
+        PRODUCTNAME,
+      </if>
+      <if test="logisticscode != null">
+        LOGISTICSCODE,
+      </if>
+      <if test="logisticsname != null">
+        LOGISTICSNAME,
+      </if>
+      <if test="logisticsno != null">
+        LOGISTICSNO,
+      </if>
+      <if test="emsno != null">
+        EMSNO,
+      </if>
+      <if test="preno != null">
+        PRENO,
+      </if>
+      <if test="invtno != null">
+        INVTNO,
+      </if>
+      <if test="ieflag != null">
+        IEFLAG,
+      </if>
+      <if test="decltime != null">
+        DECLTIME,
+      </if>
+      <if test="customscode != null">
+        CUSTOMSCODE,
+      </if>
+      <if test="portcode != null">
+        PORTCODE,
+      </if>
+      <if test="iedate != null">
+        IEDATE,
+      </if>
+      <if test="agentcode != null">
+        AGENTCODE,
+      </if>
+      <if test="agentname != null">
+        AGENTNAME,
+      </if>
+      <if test="areacode != null">
+        AREACODE,
+      </if>
+      <if test="areaname != null">
+        AREANAME,
+      </if>
+      <if test="trademode != null">
+        TRADEMODE,
+      </if>
+      <if test="trafmode != null">
+        TRAFMODE,
+      </if>
+      <if test="trafno != null">
+        TRAFNO,
+      </if>
+      <if test="voyageno != null">
+        VOYAGENO,
+      </if>
+      <if test="billno != null">
+        BILLNO,
+      </if>
+      <if test="loctno != null">
+        LOCTNO,
+      </if>
+      <if test="packagenum != null">
+        PACKAGENUM,
+      </if>
+      <if test="licenseno != null">
+        LICENSENO,
+      </if>
+      <if test="arrivedport != null">
+        ARRIVEDPORT,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="freight != null">
+        FREIGHT,
+      </if>
+      <if test="feecurrency != null">
+        FEECURRENCY,
+      </if>
+      <if test="feeflag != null">
+        FEEFLAG,
+      </if>
+      <if test="insuredfee != null">
+        INSUREDFEE,
+      </if>
+      <if test="inrcurrency != null">
+        INRCURRENCY,
+      </if>
+      <if test="inrflag != null">
+        INRFLAG,
+      </if>
+      <if test="wraptype != null">
+        WRAPTYPE,
+      </if>
+      <if test="packno != null">
+        PACKNO,
+      </if>
+      <if test="grossweight != null">
+        GROSSWEIGHT,
+      </if>
+      <if test="netweight != null">
+        NETWEIGHT,
+      </if>
+      <if test="note != null">
+        NOTE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderno != null">
+        #{orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="ebpcode != null">
+        #{ebpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="ebpname != null">
+        #{ebpname,jdbcType=VARCHAR},
+      </if>
+      <if test="ebccode != null">
+        #{ebccode,jdbcType=VARCHAR},
+      </if>
+      <if test="ebcname != null">
+        #{ebcname,jdbcType=VARCHAR},
+      </if>
+      <if test="productcode != null">
+        #{productcode,jdbcType=VARCHAR},
+      </if>
+      <if test="productname != null">
+        #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticscode != null">
+        #{logisticscode,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticsname != null">
+        #{logisticsname,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticsno != null">
+        #{logisticsno,jdbcType=VARCHAR},
+      </if>
+      <if test="emsno != null">
+        #{emsno,jdbcType=VARCHAR},
+      </if>
+      <if test="preno != null">
+        #{preno,jdbcType=VARCHAR},
+      </if>
+      <if test="invtno != null">
+        #{invtno,jdbcType=VARCHAR},
+      </if>
+      <if test="ieflag != null">
+        #{ieflag,jdbcType=CHAR},
+      </if>
+      <if test="decltime != null">
+        #{decltime,jdbcType=CHAR},
+      </if>
+      <if test="customscode != null">
+        #{customscode,jdbcType=CHAR},
+      </if>
+      <if test="portcode != null">
+        #{portcode,jdbcType=CHAR},
+      </if>
+      <if test="iedate != null">
+        #{iedate,jdbcType=CHAR},
+      </if>
+      <if test="agentcode != null">
+        #{agentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="agentname != null">
+        #{agentname,jdbcType=VARCHAR},
+      </if>
+      <if test="areacode != null">
+        #{areacode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaname != null">
+        #{areaname,jdbcType=VARCHAR},
+      </if>
+      <if test="trademode != null">
+        #{trademode,jdbcType=CHAR},
+      </if>
+      <if test="trafmode != null">
+        #{trafmode,jdbcType=CHAR},
+      </if>
+      <if test="trafno != null">
+        #{trafno,jdbcType=VARCHAR},
+      </if>
+      <if test="voyageno != null">
+        #{voyageno,jdbcType=VARCHAR},
+      </if>
+      <if test="billno != null">
+        #{billno,jdbcType=VARCHAR},
+      </if>
+      <if test="loctno != null">
+        #{loctno,jdbcType=VARCHAR},
+      </if>
+      <if test="packagenum != null">
+        #{packagenum,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseno != null">
+        #{licenseno,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivedport != null">
+        #{arrivedport,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=CHAR},
+      </if>
+      <if test="freight != null">
+        #{freight,jdbcType=NUMERIC},
+      </if>
+      <if test="feecurrency != null">
+        #{feecurrency,jdbcType=CHAR},
+      </if>
+      <if test="feeflag != null">
+        #{feeflag,jdbcType=CHAR},
+      </if>
+      <if test="insuredfee != null">
+        #{insuredfee,jdbcType=NUMERIC},
+      </if>
+      <if test="inrcurrency != null">
+        #{inrcurrency,jdbcType=CHAR},
+      </if>
+      <if test="inrflag != null">
+        #{inrflag,jdbcType=CHAR},
+      </if>
+      <if test="wraptype != null">
+        #{wraptype,jdbcType=CHAR},
+      </if>
+      <if test="packno != null">
+        #{packno,jdbcType=NUMERIC},
+      </if>
+      <if test="grossweight != null">
+        #{grossweight,jdbcType=NUMERIC},
+      </if>
+      <if test="netweight != null">
+        #{netweight,jdbcType=NUMERIC},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

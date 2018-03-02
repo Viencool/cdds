@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjdlogistics.cdds.dao.ExpInventoryListDao">
+    <resultMap id="BaseResultMap" type="com.sjdlogistics.cdds.entity.ExpInventoryList">
+        <result column="GNUM" jdbcType="NUMERIC" property="gnum"/>
+        <result column="ITEMNO" jdbcType="VARCHAR" property="itemno"/>
+        <result column="ITEMRECORDNO" jdbcType="VARCHAR" property="itemrecordno"/>
+        <result column="GCODE" jdbcType="VARCHAR" property="gcode"/>
+        <result column="GNAME" jdbcType="VARCHAR" property="gname"/>
+        <result column="GMODEL" jdbcType="VARCHAR" property="gmodel"/>
+        <result column="BARCODE" jdbcType="VARCHAR" property="barcode"/>
+        <result column="COUNTRY" jdbcType="CHAR" property="country"/>
+        <result column="CURRENCY" jdbcType="CHAR" property="currency"/>
+        <result column="QTY" jdbcType="NUMERIC" property="qty"/>
+        <result column="QTY1" jdbcType="NUMERIC" property="qty1"/>
+        <result column="QTY2" jdbcType="NUMERIC" property="qty2"/>
+        <result column="UNIT" jdbcType="CHAR" property="unit"/>
+        <result column="UNIT1" jdbcType="CHAR" property="unit1"/>
+        <result column="UNIT2" jdbcType="CHAR" property="unit2"/>
+        <result column="PRICE" jdbcType="NUMERIC" property="price"/>
+        <result column="TOTALPRICE" jdbcType="NUMERIC" property="totalprice"/>
+        <result column="NOTE" jdbcType="VARCHAR" property="note"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.sjdlogistics.cdds.entity.ExpInventoryList">
+    insert into EXPINVENTORYLIST (GNUM, ITEMNO, ITEMRECORDNO, 
+      GCODE, GNAME, GMODEL, 
+      BARCODE, COUNTRY, CURRENCY, 
+      QTY, QTY1, QTY2, UNIT, 
+      UNIT1, UNIT2, PRICE, TOTALPRICE, 
+      NOTE)
+    values (#{gnum,jdbcType=NUMERIC}, #{itemno,jdbcType=VARCHAR}, #{itemrecordno,jdbcType=VARCHAR}, 
+      #{gcode,jdbcType=VARCHAR}, #{gname,jdbcType=VARCHAR}, #{gmodel,jdbcType=VARCHAR}, 
+      #{barcode,jdbcType=VARCHAR}, #{country,jdbcType=CHAR}, #{currency,jdbcType=CHAR}, 
+      #{qty,jdbcType=NUMERIC}, #{qty1,jdbcType=NUMERIC}, #{qty2,jdbcType=NUMERIC}, #{unit,jdbcType=CHAR}, 
+      #{unit1,jdbcType=CHAR}, #{unit2,jdbcType=CHAR}, #{price,jdbcType=NUMERIC}, #{totalprice,jdbcType=NUMERIC}, 
+      #{note,jdbcType=VARCHAR})
+  </insert>
+    <insert id="inserts" parameterType="com.sjdlogistics.cdds.entity.ExpInventoryList">
+        insert into EXPORDERINFO (ORDERNO, PAYTIME, GOODSNUM,
+        CURRENCY, RATE, ORDERTOTALAMOUNT,
+        CONSIGNEE, CONSIGNEECOUNTRY, CONSIGNEEADDRESS,
+        CONSIGNEETEL, CONSIGNEEEMAIL, EBPCODE,
+        EBPNAME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.orderno,jdbcType=VARCHAR}, #{item.paytime,jdbcType=CHAR}, #{item.goodsnum,jdbcType=NUMERIC},
+            #{item.rency,jdbcType=CHAR}, #{item.rate,jdbcType=NUMERIC}, #{item.ordertotalamount,jdbcType=NUMERIC},
+            #{item.consignee,jdbcType=VARCHAR}, #{item.consigneecountry,jdbcType=CHAR},
+            #{item.consigneeaddress,jdbcType=VARCHAR},
+            #{item.consigneetel,jdbcType=VARCHAR}, #{item.consigneeemail,jdbcType=VARCHAR},
+            #{item.ebpcode,jdbcType=VARCHAR},
+            #{item.ebpname,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+    <insert id="insertSelective" parameterType="com.sjdlogistics.cdds.entity.ExpInventoryList">
+        insert into EXPINVENTORYLIST
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="gnum != null">
+                GNUM,
+            </if>
+            <if test="itemno != null">
+                ITEMNO,
+            </if>
+            <if test="itemrecordno != null">
+                ITEMRECORDNO,
+            </if>
+            <if test="gcode != null">
+                GCODE,
+            </if>
+            <if test="gname != null">
+                GNAME,
+            </if>
+            <if test="gmodel != null">
+                GMODEL,
+            </if>
+            <if test="barcode != null">
+                BARCODE,
+            </if>
+            <if test="country != null">
+                COUNTRY,
+            </if>
+            <if test="currency != null">
+                CURRENCY,
+            </if>
+            <if test="qty != null">
+                QTY,
+            </if>
+            <if test="qty1 != null">
+                QTY1,
+            </if>
+            <if test="qty2 != null">
+                QTY2,
+            </if>
+            <if test="unit != null">
+                UNIT,
+            </if>
+            <if test="unit1 != null">
+                UNIT1,
+            </if>
+            <if test="unit2 != null">
+                UNIT2,
+            </if>
+            <if test="price != null">
+                PRICE,
+            </if>
+            <if test="totalprice != null">
+                TOTALPRICE,
+            </if>
+            <if test="note != null">
+                NOTE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="gnum != null">
+                #{gnum,jdbcType=NUMERIC},
+            </if>
+            <if test="itemno != null">
+                #{itemno,jdbcType=VARCHAR},
+            </if>
+            <if test="itemrecordno != null">
+                #{itemrecordno,jdbcType=VARCHAR},
+            </if>
+            <if test="gcode != null">
+                #{gcode,jdbcType=VARCHAR},
+            </if>
+            <if test="gname != null">
+                #{gname,jdbcType=VARCHAR},
+            </if>
+            <if test="gmodel != null">
+                #{gmodel,jdbcType=VARCHAR},
+            </if>
+            <if test="barcode != null">
+                #{barcode,jdbcType=VARCHAR},
+            </if>
+            <if test="country != null">
+                #{country,jdbcType=CHAR},
+            </if>
+            <if test="currency != null">
+                #{currency,jdbcType=CHAR},
+            </if>
+            <if test="qty != null">
+                #{qty,jdbcType=NUMERIC},
+            </if>
+            <if test="qty1 != null">
+                #{qty1,jdbcType=NUMERIC},
+            </if>
+            <if test="qty2 != null">
+                #{qty2,jdbcType=NUMERIC},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=CHAR},
+            </if>
+            <if test="unit1 != null">
+                #{unit1,jdbcType=CHAR},
+            </if>
+            <if test="unit2 != null">
+                #{unit2,jdbcType=CHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=NUMERIC},
+            </if>
+            <if test="totalprice != null">
+                #{totalprice,jdbcType=NUMERIC},
+            </if>
+            <if test="note != null">
+                #{note,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>

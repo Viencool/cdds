@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjdlogistics.cdds.dao.ExpOrderInfoDao">
+    <resultMap id="BaseResultMap" type="com.sjdlogistics.cdds.entity.ExpOrderInfo">
+        <result column="ORDERNO" jdbcType="VARCHAR" property="orderno"/>
+        <result column="PAYTIME" jdbcType="CHAR" property="paytime"/>
+        <result column="GOODSNUM" jdbcType="NUMERIC" property="goodsnum"/>
+        <result column="CURRENCY" jdbcType="CHAR" property="currency"/>
+        <result column="RATE" jdbcType="NUMERIC" property="rate"/>
+        <result column="ORDERTOTALAMOUNT" jdbcType="NUMERIC" property="ordertotalamount"/>
+        <result column="CONSIGNEE" jdbcType="VARCHAR" property="consignee"/>
+        <result column="CONSIGNEECOUNTRY" jdbcType="CHAR" property="consigneecountry"/>
+        <result column="CONSIGNEEADDRESS" jdbcType="VARCHAR" property="consigneeaddress"/>
+        <result column="CONSIGNEETEL" jdbcType="VARCHAR" property="consigneetel"/>
+        <result column="CONSIGNEEEMAIL" jdbcType="VARCHAR" property="consigneeemail"/>
+        <result column="EBPCODE" jdbcType="VARCHAR" property="ebpcode"/>
+        <result column="EBPNAME" jdbcType="VARCHAR" property="ebpname"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.sjdlogistics.cdds.entity.ExpOrderInfo">
+    insert into EXPORDERINFO (ORDERNO, PAYTIME, GOODSNUM, 
+      CURRENCY, RATE, ORDERTOTALAMOUNT, 
+      CONSIGNEE, CONSIGNEECOUNTRY, CONSIGNEEADDRESS, 
+      CONSIGNEETEL, CONSIGNEEEMAIL, EBPCODE, 
+      EBPNAME)
+    values (#{orderno,jdbcType=VARCHAR}, #{paytime,jdbcType=CHAR}, #{goodsnum,jdbcType=NUMERIC}, 
+      #{currency,jdbcType=CHAR}, #{rate,jdbcType=NUMERIC}, #{ordertotalamount,jdbcType=NUMERIC}, 
+      #{consignee,jdbcType=VARCHAR}, #{consigneecountry,jdbcType=CHAR}, #{consigneeaddress,jdbcType=VARCHAR}, 
+      #{consigneetel,jdbcType=VARCHAR}, #{consigneeemail,jdbcType=VARCHAR}, #{ebpcode,jdbcType=VARCHAR}, 
+      #{ebpname,jdbcType=VARCHAR})
+  </insert>
+
+    <insert id="insertSelective" parameterType="com.sjdlogistics.cdds.entity.ExpOrderInfo">
+        insert into EXPORDERINFO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderno != null">
+                ORDERNO,
+            </if>
+            <if test="paytime != null">
+                PAYTIME,
+            </if>
+            <if test="goodsnum != null">
+                GOODSNUM,
+            </if>
+            <if test="currency != null">
+                CURRENCY,
+            </if>
+            <if test="rate != null">
+                RATE,
+            </if>
+            <if test="ordertotalamount != null">
+                ORDERTOTALAMOUNT,
+            </if>
+            <if test="consignee != null">
+                CONSIGNEE,
+            </if>
+            <if test="consigneecountry != null">
+                CONSIGNEECOUNTRY,
+            </if>
+            <if test="consigneeaddress != null">
+                CONSIGNEEADDRESS,
+            </if>
+            <if test="consigneetel != null">
+                CONSIGNEETEL,
+            </if>
+            <if test="consigneeemail != null">
+                CONSIGNEEEMAIL,
+            </if>
+            <if test="ebpcode != null">
+                EBPCODE,
+            </if>
+            <if test="ebpname != null">
+                EBPNAME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderno != null">
+                #{orderno,jdbcType=VARCHAR},
+            </if>
+            <if test="paytime != null">
+                #{paytime,jdbcType=CHAR},
+            </if>
+            <if test="goodsnum != null">
+                #{goodsnum,jdbcType=NUMERIC},
+            </if>
+            <if test="currency != null">
+                #{currency,jdbcType=CHAR},
+            </if>
+            <if test="rate != null">
+                #{rate,jdbcType=NUMERIC},
+            </if>
+            <if test="ordertotalamount != null">
+                #{ordertotalamount,jdbcType=NUMERIC},
+            </if>
+            <if test="consignee != null">
+                #{consignee,jdbcType=VARCHAR},
+            </if>
+            <if test="consigneecountry != null">
+                #{consigneecountry,jdbcType=CHAR},
+            </if>
+            <if test="consigneeaddress != null">
+                #{consigneeaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="consigneetel != null">
+                #{consigneetel,jdbcType=VARCHAR},
+            </if>
+            <if test="consigneeemail != null">
+                #{consigneeemail,jdbcType=VARCHAR},
+            </if>
+            <if test="ebpcode != null">
+                #{ebpcode,jdbcType=VARCHAR},
+            </if>
+            <if test="ebpname != null">
+                #{ebpname,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>
